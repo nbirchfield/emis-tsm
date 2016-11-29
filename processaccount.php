@@ -4,6 +4,10 @@
 </head>
 <body>
 <?php
+
+   $test = $_POST["last"];
+   echo $test;
+
    $dbhost = 'localhost';
    $dbuser = 'group4';
    $dbpass = 'Group4@TSM';
@@ -14,9 +18,8 @@
      die('Could not connect: ' . mysql_error());
    }
 
-   $username = $_POST["firstname"];
-   echo "$username";
-   echo "test";
+  // $test = $_POST["last"];
+  // echo $test;
    mysqli_close($conn);
 ?>
 </body>

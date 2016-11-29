@@ -4,7 +4,8 @@
 </head>
 <body>
 <?php
-echo "in php right now";
+
+echo "in php right now \n";
    $dbhost = 'localhost';
    $dbuser = 'group4';
    $dbpass = 'Group4@TSM';
@@ -14,7 +15,8 @@ echo "in php right now";
    {
      die('Could not connect: ' . mysql_error());
    }
-   echo 'Connected successfully';
+   echo "Connected successfully \n";
+   include 'validate.php';
    mysqli_close($conn);
   
 ?>

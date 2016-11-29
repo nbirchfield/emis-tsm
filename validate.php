@@ -14,12 +14,18 @@
 	$username = mysqli_affected_rows($username);
 	$password = mysqli_real_escape_string($password);
 	
-	//connect to the server and select database
-	mysqli_connect("localhost", "group4", "Group4@TSM");
-	mysqli_select_db("group4");
+	#connect to the server and select database
+	$con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
+	#echo "$con";
 
+		
+	$results = 0;	
 	//Query the database for user
-	$results = mysqli_query("select SUM(CASE WHEN Username = '$username' AND Password = '$password' THEN 1 ELSE 0) from EmployeeTable")
+	$results = mysqli_query($con,"select * from EmployeeTable")
 			or die("failed to query database " .mysqli_error());
+	
+	echo "here";
+
+	echo "results:  $results";
 	return $results;
 ?>
