@@ -3,7 +3,7 @@
 <head>
 	<title> Login Page </title>
    <link rel="stylesheet" type="text/css" href="style.css">
-   <div id="header" style="background-color:#003380;color:white;padding:15px;">
+   <div id="header" style="background-color:#003380;color:white;padding:10px;">
        <h1> Group4 EMIS Login </h1>
             <p>login page</p>
    </div>
