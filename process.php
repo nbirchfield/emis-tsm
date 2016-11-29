@@ -16,6 +16,7 @@ echo "in php right now";
    }
    echo 'Connected successfully';
    mysqli_close($conn);
+  
 ?>
 </body>
 </html

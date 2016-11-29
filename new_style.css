@@ -1,0 +1,88 @@
+@font-face {
+	font-family: Oswald;
+	src: url('https://fonts.googleapis.com/css?family=Oswald');
+}
+      
+body{
+	max-width: 100%;
+	height: auto;
+	width: auto\9;
+	background-image: url("http://i.imgur.com/zxmSRGc.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+      
+.container{
+	border-radius:5px;
+    width:350px;
+    height: 300px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.45);
+    margin: 0 auto;
+    margin-top: 50px;
+}
+      
+input[type="text"], input[type="password"]{
+    border-color:rgba(0,0,0,.3);
+    border-radius:5px;
+    height: 35px;
+    width:220px;
+    font-size: 16px;
+    margin-top:25px;
+    background-color: rgb(220,220,220);
+    padding-left: 10px;
+    font-family:Oswald;
+}
+      
+h1{
+	font-family:Oswald;
+	margin-bottom:0px;
+	color: rgb(153,153,153) ;
+}
+      
+.btn-login{  
+    font-family:Oswald;   
+    border-radius:5px;
+    margin-top:15px;
+    padding: 5px 55px;
+    background-color: rgb(38,159,220);
+    color:white;
+    font-weight:bold;
+    border-color:rgba(0,0,0,.3);
+    margin-bottom:5px;
+    font-size:16px;
+}
+		
+.btn-login:hover{
+	background-color:red;
+}
+      
+a:link,a:visited {
+	font-size:14px;
+	font-family:Oswald;
+	color: rgb(38,159,220);
+}     
+
+a:hover {
+	font-family:Oswald;
+	color: red;
+}
+    
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	color:white;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color:white;
+	opacity:  1;
+}
+		
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color:white;
+	opacity:  1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color:white;
+}

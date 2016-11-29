@@ -26,7 +26,7 @@
 				</p>
 				<p>
 					<label>Username:<label>
-						<input type="text" id="usename"  />
+						<input type="text" id="username"  />
 					</p>
                                 <p>
 					<label>User Email:<label>
