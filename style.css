@@ -9,6 +9,7 @@ body {
 	background-image: url("http://i.imgur.com/zxmSRGc.jpg");
 	background-size: cover;
 	background-position: center;
+	background-repeat: no-repeat;
 }
 #frm{
 	border: solid gray 1px;
