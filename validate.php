@@ -3,6 +3,10 @@
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	
+
+	echo "in validate: $username  \n";
+	echo "in validate: $password  \n";
+
 	//prevent mysq; injection
 	$username = stripcslashes($username);
 	$password = stripcslashes($password);
