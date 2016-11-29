@@ -3,10 +3,12 @@
 	src: url('https://fonts.googleapis.com/css?family=Oswald');
 }
 body {
-	margin: 0 auto;
+	max-width: 100%;
+	height: auto;
+	width: auto\9;
 	background-image: url("http://i.imgur.com/zxmSRGc.jpg");
-	background-repeat: no-repeat;
-	background-size: 125%;
+	background-size: cover;
+	background-position: center;
 }
 #frm{
 	border: solid gray 1px;
