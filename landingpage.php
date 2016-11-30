@@ -10,7 +10,9 @@ body{
 </style>
 
 <body>
-
+    <?php
+        echo "$_GET['username']";
+    ?>
 </body>
 </html>
 
