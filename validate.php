@@ -14,7 +14,7 @@
 	$con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
 
 	//Query the database for user
-	if($results = mysqli_query($con, "select count(*) from EmployeeTable where username = '$username' and password = '$password'")) {
+	if($results = mysqli_query($con, "select count(*) from EmployeeTable where username='$username' and password='$password'")) {
         if(mysqli_fetch_array($results) == 1) {
 			header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php?username=".urlencode("$username"));
 			exit;
@@ -24,5 +24,5 @@
 	}
 	mysqli_free_result($results);
 	mysqli_close($con);
-	echo "here\n";
+	echo "dammit didnt work\n";
 ?>
