@@ -15,8 +15,9 @@
 
 	//Query the database for user
 	if($results = mysqli_query($con, "select count(*) from EmployeeTable where username='$username' and password='$password'")) {
-
+		echo "in query<br />";
         $row = mysqli_fetch_array($results);
+        echo "$row[0]<br />";
         if($row[0] == 1) {
 			header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php?username=".urlencode("$username"));
 			exit;
