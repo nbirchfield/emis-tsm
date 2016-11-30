@@ -21,10 +21,10 @@
 		
 	$results = 0;	
 	//Query the database for user
-	if($results = mysqli_query($con,"select * from EmployeeTable")) {
-        $row = mysqli_fetch_array($results);
-		foreach($row as $column)
-			printf("$column<br />");
+	if($results = mysqli_query($con,"select count(*) from EmployeeTable")) {
+        //$row = mysqli_fetch_array($results);
+		//foreach($row as $column)
+			printf("$results<br />");
     } else {
 		echo mysqli_errno($con);
 	}
