@@ -22,7 +22,9 @@
 	$results = 0;	
 	//Query the database for user
 	if($results = mysqli_query($con,"select * from EmployeeTable")) {
-        echo mysqli_fetch_array($results);
+        while( $row = mysqli_fetch_array($results)) {
+        	echo "<tr><td>{$row[0]}</td>";
+		}
     } else {
 		echo mysqli_errno($con);
 	}
