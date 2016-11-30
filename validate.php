@@ -22,11 +22,9 @@
 	$results = 0;	
 	//Query the database for user
 	if($results = mysqli_query($con,"select * from EmployeeTable")) {
-        while( $row = mysqli_fetch_array($results)) {
-        	echo "<tr><td>{$row[0]}</td>";
-            echo "<td>{$row[1]}</td>";
-            echo "<td>{$row[2]}</td>";
-            echo "<td>{$row[3]}</td></tr>";
+        while($row = mysqli_fetch_array($results)) {
+        	foreach($row as $column)
+        		printf("$column<br />");
 		}
     } else {
 		echo mysqli_errno($con);
