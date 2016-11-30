@@ -14,7 +14,8 @@
 	$con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
 
 	//Query the database for user
-	if($results = mysqli_query($con, "select count(*) from EmployeeTable where username='$username' and password='$password'")) {
+	if($results = mysqli_query($con, "select count(*) from EmployeeTable where username = mysqli_real_escape_string($username) 
+																		  	and password= mysqli_real_escape_string($password)")) {
 		echo "in query<br />";
         $row = mysqli_fetch_array($results);
         echo "$row[0]<br />";
