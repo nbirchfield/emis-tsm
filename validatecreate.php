@@ -12,7 +12,12 @@
 	$firstname = stripcslashes($firstname);
 	$lastname = stripcslashes($lastname);	
 	$email = stripcslashes($email);
-
+	
+	if (!preg_match(hi, $password))
+		{
+    			echo "Password must be at least 8 characters long with at least one capital letter!\n";
+			exit;
+		}
 	//Remove these because messing up variables can add something later
 	//$username = mysqli_affected_rows($username);
 	//$password = mysqli_real_escape_string($password);

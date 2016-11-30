@@ -23,7 +23,7 @@
 				</div>   
               
 				<div class="password">
-					<input maxlength="12" type="password" name="password" placeholder ="Password">
+					<input maxlength="20" type="password" name="password" placeholder ="Password">
 				</div>   
 
 				<div class="email">

@@ -16,9 +16,9 @@
 	#connect to the server and select database
 	$con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
 
-	$stmt = mysqli_prepare($con, "select SUM(CASE WHEN Username = ? AND Password = ? THEN 1 ELSE 0 END), FailedAttempts from EmployeeTable where Username = ? and Password = ?");
+	$stmt = mysqli_prepare($con, "select SUM(CASE WHEN Username = ? AND Password = ? THEN 1 ELSE 0 END), FailedAttempts from PatientTableNew where Username = ? and Password = ?");
 	mysqli_stmt_bind_param($stmt, 'ssss', $username, $password, $username, $password);
-	$stmt2 = mysqli_prepare($con, "UPDATE EmployeeTable SET FailedAttempts = FailedAttempts + 1");
+	$stmt2 = mysqli_prepare($con, "UPDATE PatientTableNew SET FailedAttempts = FailedAttempts + 1");
 
 	//Query the database for user
 	if(mysqli_stmt_execute($stmt)) {
