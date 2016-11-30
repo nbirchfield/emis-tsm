@@ -16,7 +16,7 @@
 	$stmt = mysqli_prepare($con, "select count(*) from EmployeeTable where username = ? and password = ?");
 	mysqli_stmt_bind_param($stmt, 'ss', $username, $password);
 
-	echo "before execute: $username<br />$password<br />";
+	echo "before execute: $username<br/>";
 
 	//Query the database for user
 	if(mysqli_stmt_execute($stmt)) {
