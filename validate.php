@@ -23,7 +23,7 @@
 		mysqli_stmt_fetch($stmt);
 		mysqli_stmt_close($stmt);
         if($results == 1) {
-			header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php?username=".urlencode("$username"));
+			header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
 			exit;
         }
     } else {
