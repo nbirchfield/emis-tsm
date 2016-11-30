@@ -12,9 +12,10 @@
 
 	#connect to the server and select database
 	$con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
+	//Not working with table variable so going with to query statements
+	$table = $type == 'employee' ? 'EmployeeTable' : 'PatientTableNew';
 
-	$table = $type == 'employee' ? 'EmployeeTable' : 'PatientTable';
-	$stmt = mysqli_prepare($con, "select SUM(CASE WHEN Username = ? AND Password = ? THEN 1 ELSE 0 END), FailedAttempts from EmployeeTable where Username = ? and Password = ?");
+	$stmt = mysqli_prepare($con, "select SUM(CASE WHEN Username = ? AND Password = ? THEN 1 ELSE 0 END), FailedAttempts from $table where Username = ? and Password = ?");
 	mysqli_stmt_bind_param($stmt, 'ssss', $username, $password, $username, $password);
 	$stmt2 = mysqli_prepare($con, "UPDATE EmployeeTable SET FailedAttempts = FailedAttempts + 1");
 
@@ -27,9 +28,11 @@
         	mysqli_close($con);
 
         	//employee destination
-			header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
+			if($type == 'employee')
+				header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
 			//patient destination
-            header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
+            else
+				header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
 
 			mysqli_free_result($results);
 			exit;
