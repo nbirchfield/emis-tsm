@@ -23,6 +23,7 @@
 		mysqli_stmt_fetch($stmt);
 		mysqli_stmt_close($stmt);
         if($results == 1) {
+        	mysqli_close($con);
 			header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
 			exit;
         }
@@ -30,5 +31,5 @@
 		echo mysqli_errno($con);
 	}
 	mysqli_close($con);
-	echo "dammit didnt work\n";
+	echo "failed to redirect\n";
 ?>
