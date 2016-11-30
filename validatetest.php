@@ -29,7 +29,8 @@
 		mysqli_stmt_close($stmt);
         if($results == 1 && $attempts < 3) {
         	mysqli_close($con);
-        	//employee destination will check table to determine
+
+        	//employee destination
 			header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
 			//patient destination
 

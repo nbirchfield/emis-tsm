@@ -8,6 +8,14 @@
         <div class="container">
 			<h1 > Login</h1>
 			<form action="validatetest.php" method="post">
+
+                <div class="dropdown" >
+                    <select name="type">
+                        <option>employee</option>
+                        <option>patient</option>
+                    </select>
+                </div>
+
 				<div class="username">
 					<input type="text" name="username" placeholder = "Username">  
 				</div>   
