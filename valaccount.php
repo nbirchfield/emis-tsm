@@ -2,38 +2,56 @@
 	//get values passed from form in login.php file
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-        $firstname = $_POST['firstname'];
-        $lastname= $_POST['lastname'];	
 
 	//prevent mysq; injection
 	$username = stripcslashes($username);
 	$password = stripcslashes($password);
 
-	$username = mysqli_affected_rows($username);
-	$password = mysqli_real_escape_string($password);
-	
-	//connect to the server and select database
-//	mysqli_connect("localhost", "group4", "Group4@TSM");
-//	mysqli_select_db("group4");
+//        echo "I got here";
 
+	//$username = mysqli_affected_rows($username);
+	//$password = mysqli_real_escape_string($password);
 
-        $dbhost = 'localhost';
-        $dbuser = 'group4';
-        $dbpass = 'Group4@TSM';
-        $database = 'group4';
+	#connect to the server and select database
+	$con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
 
-        $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $database);
-        if(! $conn )
-        {
-        die "Could not connect: ' . mysqul_error())";
+        $query = sprintf("SELECT username from EmployeeTable WHERE username = '%s'",
+                          $username);
+
+        $result = mysqli_query($con, $query);
+
+        if(! $result) {
+           $message = 'invalid query: '. mysqli_error(). "\n";
+           $message .= 'Whole query: ' . $query;
+           die($message); 
         }
 
-        echo "Connected";
-	//Query the database for user
-//	$results = mysqli_query("select SUM(CASE WHEN Username = '$username' AND Password = '$password' THEN 1 ELSE 0) from EmployeeTable")
-//			or die("failed to query database " .mysqli_error());
-	
+       $row = mysqli_fetch_assoc($result);
+       if($row['username'] == $username){
+         echo "Username already exists";
 
-//	echo "results:  $results";
-//	return $results;
+       }
+       else{
+
+          $query2 = sprintf("INSERT INTO PatientTable (name, username, password) VALUES( 'test',  'attempt',  'im a password')");
+                              // $firstname, $username, $password);
+         
+          $result2 = mysqli_query($con, $query2);
+
+           if(! $result2) {
+           $message2 = 'invalid query: '. mysqli_error(). "\n";
+           $message2 .= 'Whole query: ' . $query2;
+           die($message2); 
+           }
+
+
+                               
+          
+       }
+
+
+
+	mysqli_free_result($results);
+	mysqli_close($con);
+//	echo "dammit didnt work\n";
 ?>

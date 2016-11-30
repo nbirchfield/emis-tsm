@@ -7,7 +7,7 @@
     <body>
         <div class="container">
 			<h1 > Login</h1>
-			<form action="validatetest.php" method="post">
+			<form action="unlock.php" method="post">
 				<div class="username">
 					<input type="text" name="username" placeholder = "Username">  
 				</div>   
