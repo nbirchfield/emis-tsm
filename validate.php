@@ -24,12 +24,16 @@
 	if($results = mysqli_query($con,"select * from EmployeeTable")) {
         while( $row = mysqli_fetch_array($results)) {
         	echo "<tr><td>{$row[0]}</td>";
+            echo "<td>{$row[1]}</td>";
+            echo "<td>{$row[2]}</td>";
+            echo "<td>{$row[3]}</td></tr>";
 		}
     } else {
 		echo mysqli_errno($con);
 	}
 	mysqli_free_result($results);
-	echo "here";
+	mysqli_close($con);
+	echo "here\n";
 
 	//echo "results:  $results";
 	return $results;
