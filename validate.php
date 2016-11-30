@@ -21,9 +21,11 @@
 		
 	$results = 0;	
 	//Query the database for user
-	$results = mysqli_query($con,"select * from EmployeeTable")
-			or die("failed to query database " .mysqli_error());
-	printf("query results: %s \n", $results);
+	if($results = mysqli_query($con,"select * from EmployeeTable")) {
+        echo mysqli_fetch_array($results);
+    } else {
+		echo mysqli_errno($con);
+	}
 	mysqli_free_result($results);
 	echo "here";
 
