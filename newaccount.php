@@ -1,12 +1,12 @@
 <html>
 	<head>
-        <title> Log In</title>
+        <title>Sign Up</title>
 		<link rel="stylesheet" type="text/css" href="new_style.css">
 	</head>
 	
     <body>
         <div class="container">
-			<h1 > Login</h1>
+			<h1 >Sign Up</h1>
 			<form action="valaccount.php" method="post">
 				<div class="firstname">
 					<input type="text" name="firstname" placeholder = "Firstname">  
@@ -22,13 +22,11 @@
 					<input maxlength="12" type="password" name="password" placeholder ="Password">
 				</div>   
               
-				<input type="submit" name="submit" value="Sign In" class="btn-login">
+				<input type="submit" name="submit" value="Create" class="btn-login">
               
 			</form> 
             
-			<a href="">Help, i forgot my password</a><br>
-           
-		    <a href="newaccount.php">Sign Up</a> 
+		    <a href="index.php">Back</a> 
 		
 		</div>
     </body>
