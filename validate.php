@@ -3,12 +3,13 @@
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
+	echo "after entry: $username<br/>";
 	//prevent mysq; injection
 	$username = stripcslashes($username);
 	$password = stripcslashes($password);
 
-	$username = mysqli_affected_rows($username);
-	$password = mysqli_real_escape_string($password);
+	//$username = mysqli_affected_rows($username);
+	//$password = mysqli_real_escape_string($password);
 	
 	#connect to the server and select database
 	$con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
@@ -16,7 +17,7 @@
 	$stmt = mysqli_prepare($con, "select count(*) from EmployeeTable where username = ? and password = ?");
 	mysqli_stmt_bind_param($stmt, 'ss', $username, $password);
 
-	echo "before execute: $username<br/>";
+	echo "$username<br/>";
 
 	//Query the database for user
 	if(mysqli_stmt_execute($stmt)) {
