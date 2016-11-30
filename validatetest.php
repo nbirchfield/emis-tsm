@@ -1,5 +1,6 @@
 <?php
 	//get values passed from form in login.php file
+	$type = $_POST['type'];
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	
@@ -16,7 +17,8 @@
 	#connect to the server and select database
 	$con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
 
-	$stmt = mysqli_prepare($con, "select SUM(CASE WHEN Username = ? AND Password = ? THEN 1 ELSE 0 END), FailedAttempts from EmployeeTable where Username = ? and Password = ?");
+	$table = $type == 'employee' ? 'EmployeeTable' : 'PatientTable';
+	$stmt = mysqli_prepare($con, "select SUM(CASE WHEN Username = ? AND Password = ? THEN 1 ELSE 0 END), FailedAttempts from $table where Username = ? and Password = ?");
 	mysqli_stmt_bind_param($stmt, 'ssss', $username, $password, $username, $password);
 	$stmt2 = mysqli_prepare($con, "UPDATE EmployeeTable SET FailedAttempts = FailedAttempts + 1");
 
@@ -27,7 +29,10 @@
 		mysqli_stmt_close($stmt);
         if($results == 1 && $attempts < 3) {
         	mysqli_close($con);
+        	//employee destination will check table to determine
 			header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
+			//patient destination
+
 			mysqli_free_result($results);
 			exit;
         }
