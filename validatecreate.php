@@ -25,7 +25,7 @@
 		mysqli_stmt_close($verifystmt);
 	}
 	if($results == 0) {
-		mysqli_free_result($verifystmt)
+		mysqli_free_result($verifystmt);
 		$addstmt = mysqli_prepare($con, "INSERT INTO PatientTableNew VALUES(?,?,?,'Temppass9',?, 0)");
 		mysqli_stmt_bind_param($addstmt, 'ssss', $firstname, $lastname, $username, $email);
 
