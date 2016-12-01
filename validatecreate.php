@@ -30,8 +30,10 @@
 		mysqli_stmt_close($verifystmt);
         }
 	 if($results == 0) {
+		mysqli_free_result($results);
 		$addstmt = mysqli_prepare($con, "INSERT INTO PatientTableNew VALUES(?,?,?,?,?)");
 		mysqli_stmt_bind_param($addstmt, 'sssss', $firstname,$lastname,$username,$password,$email);
+<<<<<<< HEAD
 		if(mysqli_stmt_execute($addstmt)){
 			mysqli_stmt_fetch($addstmt);
 			mysqli_stmt_close($addstmt);
@@ -46,6 +48,19 @@
 			mysqli_close($con);
 
 			header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
+=======
+//		mysqli_stmt_execute($addstmt));
+		echo "I GOT HERE\n";
+		echo "$firstname,$lastname,$username,$password,$email";
+		if(mysqli_stmt_execute($addstmt)){
+			mysqli_stmt_fetch($addstmt);
+			mysqli_stmt_close($addstmt);
+		
+		echo "I GOT HERE TOO";	
+        	}
+		mysqli_close($con);
+//			header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
+>>>>>>> 5a01173f2f32a4ebc74babf049b7cecb37ff3eba
 			exit;
         }
         else {
