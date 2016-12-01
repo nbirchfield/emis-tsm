@@ -22,7 +22,7 @@
 					<input type="text" name="username" placeholder = "Username">  
 				</div>   
               
-				<div class="password">
+				<!<div class="password">>
 					<input maxlength="12" type="password" name="password" placeholder ="Password">
 				</div>   
 

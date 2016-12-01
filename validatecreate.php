@@ -1,22 +1,22 @@
 <?php
 	//get values passed from form in login.php file
 	$username = $_POST['username'];
-	$password = $_POST['password'];
+
+	//$password = $_POST['password'];
+
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
 	$email = $_POST['email'];
 
 	//prevent mysq; injection
 	$username = stripcslashes($username);
-	$password = stripcslashes($password);
+	#switching to a default password. will implent change password later
+	//$password = stripcslashes($password);
+
 	$firstname = stripcslashes($firstname);
 	$lastname = stripcslashes($lastname);	
 	$email = stripcslashes($email);
 
-	//Remove these because messing up variables can add something later
-	//$username = mysqli_affected_rows($username);
-	//$password = mysqli_real_escape_string($password);
-	
 	#connect to the server and select database
 	$con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
 
@@ -36,7 +36,15 @@
 			mysqli_stmt_fetch($addstmt);
 			mysqli_stmt_close($addstmt);
 		}	
-        	mysqli_close($con);
+
+			//can add a query to grab a default from database or just use a hardcoded one but this should work
+			$msg = "Automatically generated message. Do not reply.\nYour temporary password is: ChangeMe\n";
+			$msg = wordwrap($msg, 70);
+
+			mail("kingkongn64@hotmail.com", "Automated message", $msg);
+
+			mysqli_close($con);
+
 			header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
 			exit;
         }
