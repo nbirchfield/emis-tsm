@@ -25,7 +25,15 @@
 				<div class="email">
 					<input type="text" name="email" placeholder = "Email">
 				</div>
-              
+
+                                <div class="question">
+					<input type="text" name="question" placeholder = "Security Question">
+				</div>
+
+                                <div class="answer">
+					<input type="text" name="answer" placeholder = "Security Answer">
+				</div>
+
 				<input type="submit" name="submit" value="Create" class="btn-login">
               
 			</form> 
