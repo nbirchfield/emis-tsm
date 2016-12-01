@@ -10,7 +10,7 @@
 			<h1 > Create Account</h1>
 			<form action="validatecreate.php" method="post">
 				
-                                <div class="firstname">
+                <div class="firstname">
 					<input type="text" name="firstname" placeholder = "Firstname">  
 				</div>   
 
@@ -21,19 +21,7 @@
 				<div class="username">
 					<input type="text" name="username" placeholder = "Username">  
 				</div>   
-              
-<<<<<<< HEAD
-<<<<<<< HEAD
-				<!<div class="password">>
-					<input maxlength="12" type="password" name="password" placeholder ="Password">
-=======
-				<div class="password">
-					<input maxlength="20" type="password" name="password" placeholder ="Password">
->>>>>>> 7be1bca0fb910d2d143e298d6910137c30bda735
-				</div>   
 
-=======
->>>>>>> c03e28de7143d7c166f8ce4db7c60c3071e12664
 				<div class="email">
 					<input type="text" name="email" placeholder = "Email">
 				</div>
