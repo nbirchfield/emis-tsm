@@ -44,9 +44,10 @@
 		if(mysqli_stmt_execute($addstmt)){
 			mysqli_stmt_fetch($addstmt);
 			mysqli_stmt_close($addstmt);
-		}
+		
 		echo "I GOT HERE TOO";	
-        	mysqli_close($con);
+        	}
+		mysqli_close($con);
 //			header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
 			exit;
         }
