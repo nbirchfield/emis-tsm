@@ -22,10 +22,6 @@
 					<input type="text" name="username" placeholder = "Username">  
 				</div>   
               
-				<div class="password">
-					<input maxlength="20" type="password" name="password" placeholder ="Password">
-				</div>   
-
 				<div class="email">
 					<input type="text" name="email" placeholder = "Email">
 				</div>

@@ -1,14 +1,14 @@
 <?php
 	//get values passed from form in login.php file
 	$username = $_POST['username'];
-	$password = $_POST['password'];
+//	$password = $_POST['password'];
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
 	$email = $_POST['email'];
 
 	//prevent mysq; injection
 	$username = stripcslashes($username);
-	$password = stripcslashes($password);
+//	$password = stripcslashes($password);
 	$firstname = stripcslashes($firstname);
 	$lastname = stripcslashes($lastname);	
 	$email = stripcslashes($email);
@@ -36,16 +36,15 @@
         }
 	 if($results == 0) {
 		mysqli_free_result($results);
-		$addstmt = mysqli_prepare($con, "INSERT INTO PatientTableNew VALUES(?,?,?,?,?,'0')");
-		mysqli_stmt_bind_param($addstmt, 'sssss', $firstname,$lastname,$username,$password,$email);
+		$addstmt = mysqli_prepare($con, "INSERT INTO PatientTableNew VALUES(?,?,?,'Temppass9',?,'0')");
+		mysqli_stmt_bind_param($addstmt, 'ssss', $firstname,$lastname,$username,$email);
 		if(mysqli_stmt_execute($addstmt)){
 			mysqli_stmt_fetch($addstmt);
 			mysqli_stmt_close($addstmt);
-		
         	}
-		mysqli_close($con)
-			header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
-			exit;
+		mysqli_close($con);
+		header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
+		exit;
         }
         else {
 		echo mysqli_errno($con);
