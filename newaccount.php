@@ -23,6 +23,7 @@
 				</div>   
               
 <<<<<<< HEAD
+<<<<<<< HEAD
 				<!<div class="password">>
 					<input maxlength="12" type="password" name="password" placeholder ="Password">
 =======
@@ -31,6 +32,8 @@
 >>>>>>> 7be1bca0fb910d2d143e298d6910137c30bda735
 				</div>   
 
+=======
+>>>>>>> c03e28de7143d7c166f8ce4db7c60c3071e12664
 				<div class="email">
 					<input type="text" name="email" placeholder = "Email">
 				</div>
