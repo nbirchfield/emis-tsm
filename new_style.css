@@ -2,7 +2,7 @@
 	font-family: Oswald;
 	src: url('https://fonts.googleapis.com/css?family=Oswald');
 }
-      
+
 body{
 	max-width: 100%;
 	height: auto;
@@ -33,6 +33,11 @@ input[type="text"], input[type="password"]{
     background-color: rgb(220,220,220);
     padding-left: 10px;
     font-family:Oswald;
+}
+
+
+select[name="type"]:hover{
+	background-color: rgb(38,159,220);
 }
       
 h1{

@@ -35,7 +35,7 @@
 		if(mysqli_stmt_execute($addstmt)){
 			mysqli_stmt_fetch($addstmt);
 			mysqli_stmt_close($addstmt);
-		}	
+		}
 
 			//can add a query to grab a default from database or just use a hardcoded one but this should work
 			$msg = "Automatically generated message. Do not reply.\nYour temporary password is: ChangeMe\n";

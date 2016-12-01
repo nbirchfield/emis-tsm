@@ -22,8 +22,13 @@
 					<input type="text" name="username" placeholder = "Username">  
 				</div>   
               
+<<<<<<< HEAD
 				<!<div class="password">>
 					<input maxlength="12" type="password" name="password" placeholder ="Password">
+=======
+				<div class="password">
+					<input maxlength="20" type="password" name="password" placeholder ="Password">
+>>>>>>> 7be1bca0fb910d2d143e298d6910137c30bda735
 				</div>   
 
 				<div class="email">

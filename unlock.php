@@ -28,7 +28,9 @@
 		mysqli_stmt_execute($stmt3);	
 		mysqli_stmt_fetch($stmt3);	
         	mysqli_close($con);
-		echo "Account Successfully Unlocked!";
+		//echo "Account Successfully Unlocked!";
+		header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
+		mysqli_free_result($results);
 		exit;
         }
 	else{
