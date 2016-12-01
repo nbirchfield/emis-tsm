@@ -13,11 +13,11 @@
 	$lastname = stripcslashes($lastname);	
 	$email = stripcslashes($email);
 	
-	if (!preg_match(hi, $password))
-		{
-    			echo "Password must be at least 8 characters long with at least one capital letter!\n";
-			exit;
-		}
+//	if (!preg_match(hi, $password))
+//		{
+//  			echo "Password must be at least 8 characters long with at least one capital letter!\n";
+//			exit;
+//		}
 	//Remove these because messing up variables can add something later
 	//$username = mysqli_affected_rows($username);
 	//$password = mysqli_real_escape_string($password);
@@ -37,10 +37,11 @@
 	 if($results == 0) {
 		$addstmt = mysqli_prepare($con, "INSERT INTO PatientTableNew VALUES(?,?,?,?,?)");
 		mysqli_stmt_bind_param($addstmt, 'sssss', $firstname,$lastname,$username,$password,$email);
-		if(mysqli_stmt_execute($addstmt)){
-			mysqli_stmt_fetch($addstmt);
-			mysqli_stmt_close($addstmt);
-		}	
+		mysqli_stmt_execute($addstmt));
+//		if(mysqli_stmt_execute($addstmt)){
+//			mysqli_stmt_fetch($addstmt);
+//			mysqli_stmt_close($addstmt);
+//		}	
         	mysqli_close($con);
 			header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
 			exit;
