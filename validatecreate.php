@@ -38,7 +38,7 @@
 		$msg = "Automatically generated message. Do not reply.\nYour temporary password is: Temppass9\n";
 		$msg = wordwrap($msg, 70);
 
-		if(mail("kingkongn64@hotmail.com", "Automated message", $msg)) {
+		if(mail("kingkongn64@hotmail.com, nbirchfield64@gmail.com, yks374@my.utsa.edu", "Automated message", $msg)) {
             echo "mail delivered successfully";
             mysqli_close($con);
             header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
