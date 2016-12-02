@@ -8,7 +8,7 @@
     <body>
         <div class="container">
 			<h1 > Create Account</h1>
-			<form action="validatecreate.php" method="post">
+			<form action="validatecreatetest.php" method="post">
 				
                 <div class="firstname">
 					<input type="text" name="firstname" placeholder = "Firstname">  
