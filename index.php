@@ -1,3 +1,7 @@
+<?php require 'vendor/autoload.php';
+    use Mailgun\Mailgun;
+    $mailgun = new Mailgun\('api_key', new \Http\Adapter\Guzzle6\Client());
+?>
 <html>
 	<head>
 	<style>
