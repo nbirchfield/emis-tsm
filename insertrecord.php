@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>LandingPage</title>
+        <title>LandingPage</title>
 <style>
 body {
     margin: 0;
-	max-width: 100%;
-	height: auto;
-	width: auto;
-	background-image: url("http://i.imgur.com/uO6RkYM.jpg");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	
+        max-width: 100%;
+        height: auto;
+        width: auto;
+        background-image: url("http://i.imgur.com/uO6RkYM.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
 }
 
 h1{
-	font-family:Oswald;
+        font-family:Oswald;
     margin-bottom:0px;
     color: black ;
-	text-align: center;
+        text-align: center;
 }
 
 ul {
@@ -46,15 +46,32 @@ li a:hover{
 }
 
 .page{
-	margin-left:25%;
-	padding:1px 16px;
-	height:99vh;
+        margin-left:25%;
+        padding:1px 16px;
+        height:99vh;
+}
+
+.btn{
+    font-family:Oswald;
+    border-radius:5px;
+    padding: 5px 55px;
+    background-color: rgb(38,159,220);
+    color:white;
+    font-weight:bold;
+    border-color:rgba(0,0,0,.3);
+    font-size:16px;
+	position:relative;
+	left: 30%;
+	margin-top:50%;
+}
+
+.btn:hover{
+        background-color:red;
 }
 
 .home{
 	margin-top:70%;
 }
-
 </style>
 </head>
 <body>
@@ -71,7 +88,12 @@ li a:hover{
 </ul>
 
 <div class="page">
-<h1>Welcome</h1>
+<h1>Records</h1>
+<form action="" method="">
+	<input type="submit" name="submit" value="Find Document" class="btn">
+</form>
+
+
 
 </div>
 
