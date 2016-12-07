@@ -7,11 +7,6 @@
 	$username = stripcslashes($username);
 	$password = stripcslashes($password);
 
-//        echo "I got here";
-
-	//$username = mysqli_affected_rows($username);
-	//$password = mysqli_real_escape_string($password);
-
 	#connect to the server and select database
 	$con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
 
@@ -34,22 +29,16 @@
        else{
 
           $query2 = sprintf("INSERT INTO PatientTable (name, username, password) VALUES( 'test',  'attempt',  'im a password')");
-                              // $firstname, $username, $password);
          
           $result2 = mysqli_query($con, $query2);
 
            if(! $result2) {
            $message2 = 'invalid query: '. mysqli_error(). "\n";
            $message2 .= 'Whole query: ' . $query2;
-           die($message2); 
-           }
-
-
-                               
+           die($message2);
+	   }
           
        }
-
-
 
 	mysqli_free_result($results);
 	mysqli_close($con);

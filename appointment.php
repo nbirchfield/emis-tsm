@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>LandingPage</title>
+        <title>Appointments</title>
 <style>
 body {
     margin: 0;
@@ -72,10 +72,6 @@ p {
     font-weight:bold;
     border-color:rgba(0,0,0,.3);
     font-size:16px;
-	position:relative;
-	left: 40%;
-        
-	margin-top:auto;
 }
 
 .btn:hover{
@@ -85,6 +81,12 @@ p {
 .home{
 	margin-top:70%;
 }
+
+form{	
+	text-align: center;
+	
+}
+
 </style>
 </head>
 <body>
@@ -92,7 +94,7 @@ p {
 <ul>
   <li><a class="home" href="landingpage.php">Home</a></li>
   <li><a href="">Calander</a></li>
-  <li><a href="">Make Appointment</a></li>
+  <li><a href="appointment.php">Make Appointment</a></li>
   <li><a href="">Medical History</a></li>
   <li><a href="">Messages</a></li>
   <li><a href="">Personal Info</a></li>
@@ -111,11 +113,7 @@ echo "Add query to datavase for 3 appointments coming up and print them, print n
 	<input type="submit" name="submit" value="Make Appointment" class="btn">
 </form>
 </p>
-
-
-
 </div>
-
 </body>
 </html>
 

@@ -2,6 +2,8 @@
     "require": {
         "mailgun/mailgun-php": "^2.1",
         "php-http/guzzle6-adapter": "^1.1",
-        "php-http/message": "^1.4"
+        "php-http/message": "^1.4",
+        "phpmailer/phpmailer": "^5.2",
+        "league/oauth2-google": "^1.0"
     }
 }

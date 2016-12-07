@@ -1,6 +1,3 @@
-<?php require 'vendor/autoload.php';
-    use Mailgun\Mailgun;
-?>
 <html>
 	<head>
 	<style>
@@ -49,7 +46,7 @@
               
 			</form> 
             
-			<a href="resetpassword.php">Help, I forgot my password</a><br>
+			<a href="newresetpassword.php">Help, I forgot my password</a><br>
            
 		    	<a href="newaccount.php">Sign Up</a><br> 
 		

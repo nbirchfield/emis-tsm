@@ -50,7 +50,10 @@ li a:hover{
         padding:1px 16px;
         height:99vh;
 }
-
+form{
+	text-align: center;
+	
+}
 .btn{
     font-family:Oswald;
     border-radius:5px;
@@ -60,9 +63,6 @@ li a:hover{
     font-weight:bold;
     border-color:rgba(0,0,0,.3);
     font-size:16px;
-	position:relative;
-	left: 30%;
-	margin-top:50%;
 }
 
 .btn:hover{
