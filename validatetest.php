@@ -24,26 +24,28 @@
 
 	# Query the database for user
 	if(mysqli_stmt_execute($stmt)) {
-		mysqli_stmt_bind_result($stmt, $results, $attempts);
-		mysqli_stmt_fetch($stmt);
-		mysqli_stmt_close($stmt);
-		
-		# if user is in database and login credentials verified
-        	if($results == 1 && $attempts < 3) {
-        	mysqli_close($con);
+        mysqli_stmt_bind_result($stmt, $results, $attempts);
+        mysqli_stmt_fetch($stmt);
+        mysqli_stmt_close($stmt);
 
-        	# employee destination
-		if($type == 'employee')
-			header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
-			mysqli_free_result($results);
-			exit;
-		# patient destination
-            	else
-			header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
-			mysqli_free_result($results);
-			exit;
-        	}
-    	}
+        # if user is in database and login credentials verified
+        if ($results == 1 && $attempts < 3) {
+
+            mysqli_close($con);
+
+            # employee destination
+            if ($type == 'employee') {
+                header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
+                mysqli_free_result($results);
+                exit;
+            } else {
+                # patient destination
+                header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
+                mysqli_free_result($results);
+                exit;
+            }
+        }
+    }
 
 	if($attempts >=3){
 		echo "You have tried too many login attempts! Please Unlock Account";
