@@ -5,7 +5,7 @@
     $date = $_POST['date'];
     $time = $_POST['time'];
     $doctor = $_POST['doctor'];
-    $datetime = $date. $time;
+    $datetime = $date . " " . $time;
 
     echo "$firstname\n$lastname\n$datetime\n$doctor";
 
