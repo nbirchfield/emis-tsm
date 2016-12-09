@@ -135,6 +135,18 @@ input[type="text"], input[type="date"]{
     font-family:Oswald;
 }
 
+input[type="text"], input[type="time"]{
+    border-color:rgba(0,0,0,.3);
+    border-radius:5px;
+    height: 24px;
+    width:180px;
+    font-size: 14px;
+    margin-top:10px;
+    background-color: rgb(220,220,220);
+    padding-left: 10px;
+    font-family:Oswald;
+}
+
 select{
     border-color:rgba(0,0,0,.3);
     border-radius:5px;
@@ -171,7 +183,7 @@ select{
         <input type ="text" name="firstname" placeholder="First Name"> <br>
         <input type ="text" name="lastname" placeholder="Last Name"> <br>
         <input placeholder="Date" class="textbox-n" type="date" name ="date" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"> <br>
-        <input type="time" name="time" class="textbox-n">
+        <input type="time" name="time" class="textbox-n" id="time">
 
         <p class="select doctor" style="color:">
             <select name="doctor">
