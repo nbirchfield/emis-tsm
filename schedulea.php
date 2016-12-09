@@ -170,7 +170,7 @@ select{
 
     <input type ="text" name="lastname" placeholder="Last Name"> <br>
 
-<input placeholder="Date" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
+<input placeholder="Date" class="textbox-n" type="date" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
     <p class="select doctor" style="color:">
     <select name="Doctors" name="doctor">
 		<option value="" disabled selected>Select your Doctor</option>
