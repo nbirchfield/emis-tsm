@@ -173,11 +173,11 @@ select{
         <input placeholder="Date" class="textbox-n" type="date" name ="date" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
 
         <p class="select doctor" style="color:">
-            <select name="Doctors" name="doctor">
+            <select name="doctor">
 		        <option value="" disabled selected>Select your Doctor</option>
-                <option value="Doctor1">Doctor1</option>
-                <option value="Doctor2">Doctor2</option>
-                <option value="Doctor3">Doctor3</option>
+                <option>Doctor1</option>
+                <option>Doctor2</option>
+                <option>Doctor3</option>
             </select>
 	    </p>
 
