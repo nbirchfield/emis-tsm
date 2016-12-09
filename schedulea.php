@@ -170,7 +170,7 @@ select{
     <form action="makeappointment.php" method="post" >
         <input type ="text" name="firstname" placeholder="First Name"> <br>
         <input type ="text" name="lastname" placeholder="Last Name"> <br>
-        <input type="datetime" name ="datetime" placeholder="date/time">
+        <input placeholder="Date" class="textbox-n" type="date" name ="date" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
 
         <p class="select doctor" style="color:">
             <select name="doctor">
