@@ -1,8 +1,9 @@
 <?php
-    $username = $_POST['username'];
+
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
-    $email = $_POST['email'];
-    $question = $_POST['question'];
-    $answer = $_POST['answer'];
+    $date = $_POST['date'];
+    $doctor = $_POST['doctor'];
+
+    echo "$firstname\n$lastname\n$date\n$doctor";
 ?>

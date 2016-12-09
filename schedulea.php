@@ -164,32 +164,31 @@ select{
 </ul>
 
 <div class="page">
-<h1 align="left">Schedule Appointment</h1>
-<form id="input" >
-    <input type ="text" name="firstname" placeholder="First Name"> <br>
 
-    <input type ="text" name="lastname" placeholder="Last Name"> <br>
+    <h1 align="left">Schedule Appointment</h1>
 
-<input placeholder="Date" class="textbox-n" type="date" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
-    <p class="select doctor" style="color:">
-    <select name="Doctors" name="doctor">
-		<option value="" disabled selected>Select your Doctor</option>
-        <option value="Doctor1">Doctor1</option>
-        <option value="Doctor2">Doctor2</option>
-        <option value="Doctor3">Doctor3</option>
-    </select> 
-	</p>
-    <textarea name="reason" placeholder="Type reason for appointment" rows = "5" cols = "50"></textarea> <br>
-<form action="" method="POST">
+    <form action="makeappointment.php" method="post" >
+        <input type ="text" name="firstname" placeholder="First Name"> <br>
+        <input type ="text" name="lastname" placeholder="Last Name"> <br>
+        <input placeholder="Date" class="textbox-n" type="date" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
+
+        <p class="select doctor" style="color:">
+            <select name="Doctors" name="doctor">
+		        <option value="" disabled selected>Select your Doctor</option>
+                <option value="Doctor1">Doctor1</option>
+                <option value="Doctor2">Doctor2</option>
+                <option value="Doctor3">Doctor3</option>
+            </select>
+	    </p>
+
+        <textarea name="reason" placeholder="Type reason for appointment" rows = "5" cols = "50"></textarea> <br>
+
         <input type="submit" name="submit" value="Submit" class="btn-s">
-</form>
-</form>
-<form action="appointment.php" method="POST">
+    </form>
+
+    <form action="appointment.php" method="POST">
         <input type="submit" name="back" value="Back" class="btn">
-</form>
-</p>
-
-
+    </form>
 
 </div>
 
