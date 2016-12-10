@@ -120,7 +120,7 @@ form{
         mysqli_stmt_close($verifystmt);
     }
 */
-echo "Add query to datavase for 3 appointments coming up and print them, print no apoinments if none username=$username";
+echo "Add query to datavase for 3 appointments coming up and print them, username=$username";
 ?>
 <form action="schedulea.php" method="POST">
 	<input type="submit" name="submit" value="Make Appointment" class="btn">
