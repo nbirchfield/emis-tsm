@@ -2,6 +2,25 @@
 
 
 <html>
+
+        <style>
+
+                select[name="type"]{
+                        border-color:rgba(0,0,0,.3);
+                        border-radius: 5px;
+                        height:25px;
+                        width: 100px;
+                        background-color: rgb(220,220,220);
+                        color:white;
+                        font-family:Oswald;
+                        font-size:14px;
+                }
+
+                select[name="type"]:hover{
+                        background-color: red;
+                }
+        </style>
+
 	<head>
         <title>Reset</title>
 		<link rel="stylesheet" type="text/css" href="new_style.css">

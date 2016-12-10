@@ -8,7 +8,18 @@
     <body>
         <div class="container">
 			<h1 > Create Account</h1>
-			<form action="validatecreatetest.php" method="post">
+<?php
+	$url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+	if(strpos($url, 'error=empty') ){
+		echo "<font color='red'>Fill out all fields!!!</font>";
+	}	
+	if(strpos($url, 'error=inUse') ){
+		echo "<font color='red'>Username already in use!!!</font>";
+		
+	}
+?>
+
+			<form action="validatecreate_new.php" method="post">
 				
                 <div class="firstname">
 					<input type="text" name="firstname" placeholder = "Firstname">  
