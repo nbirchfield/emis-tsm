@@ -35,12 +35,12 @@
 
             # employee destination
             if ($type == 'employee') {
-                header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php?username=$username");
+                header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php?username=".$username);
                 mysqli_free_result($results);
                 exit;
             } else {
                 # patient destination
-                header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php?username=$username");
+                header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php?username=".$username);
                 mysqli_free_result($results);
                 exit;
             }
