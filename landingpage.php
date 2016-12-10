@@ -62,7 +62,7 @@ li a:hover{
 <ul>
   <li><a class="home" href="landingpage.php">Home</a></li>
   <li><a href="">Calander</a></li>
-  <li><a href="appointment.php">Make Appointment</a></li>
+  <li><a href="appointment.php">Appointments</a></li>
   <li><a href="">Medical History</a></li>
   <li><a href="">Messages</a></li>
   <li><a href="">Personal Info</a></li>
