@@ -90,7 +90,9 @@ form{
 </style>
 </head>
 <body>
-
+<?php
+    $username = $_GET['username'];
+?>
 <ul>
   <li><a class="home" href="landingpage.php?username=<?php echo $username; ?>">Home</a></li>
   <li><a href="">Calander</a></li>
@@ -106,7 +108,7 @@ form{
 <h1>Appointments</h1> 
 <p align = "center"> Your Upcoming Apointments:<br><br>
 <?php
-    $username = $_GET['username'];
+
     $con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
 
     # create sql query and bind parameters
@@ -120,7 +122,18 @@ form{
         mysqli_stmt_close($verifystmt);
     }
 
-echo "Add query to datavase for 3 appointments coming up and print them, username=$username query result=$result1";
+    # create sql query and bind parameters
+    $verifystmt2 = mysqli_prepare($con, "select * from appointment where patientID = ?");
+    mysqli_stmt_bind_param($verifystmt2, 's', $result1);
+
+    # Query the database to see i
+    if(mysqli_stmt_execute($verifystmt2)) {
+        mysqli_stmt_bind_result($verifystmt2, $result2);
+        mysqli_stmt_fetch($verifystmt2);
+        mysqli_stmt_close($verifystmt2);
+    }
+
+    echo "$result2";
 ?>
 <form action="schedulea.php" method="POST">
 	<input type="submit" name="submit" value="Make Appointment" class="btn">
