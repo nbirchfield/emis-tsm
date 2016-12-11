@@ -107,20 +107,20 @@ form{
 <p align = "center"> Your Upcoming Apointments:<br><br>
 <?php
     $username = $_GET['username'];
-    /*$con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
+    $con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
 
     # create sql query and bind parameters
-    $verifystmt = mysqli_prepare($con, "select * from appointment where patientID = ?");
-    mysqli_stmt_bind_param($verifystmt, 's', );
+    $verifystmt = mysqli_prepare($con, "select patientID from PatientTableNew where username = ?");
+    mysqli_stmt_bind_param($verifystmt, 's', $username);
 
     # Query the database to see i
     if(mysqli_stmt_execute($verifystmt)) {
-        mysqli_stmt_bind_result($verifystmt, $results);
+        mysqli_stmt_bind_result($verifystmt, $result1);
         mysqli_stmt_fetch($verifystmt);
         mysqli_stmt_close($verifystmt);
     }
-*/
-echo "Add query to datavase for 3 appointments coming up and print them, username=$username";
+
+echo "Add query to datavase for 3 appointments coming up and print them, username=$username query result=$result1";
 ?>
 <form action="schedulea.php" method="POST">
 	<input type="submit" name="submit" value="Make Appointment" class="btn">
