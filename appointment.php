@@ -133,10 +133,14 @@ form{
         mysqli_stmt_bind_result($verifystmt2, $result2);
         mysqli_stmt_fetch($verifystmt2);
         mysqli_stmt_close($verifystmt2);
+    } else {
+        echo "sql error: " .mysqli_errno($con);
     }
+
     $num_rows = mysqli_num_rows($result2);
     echo "num rows: $num_rows<br>";
-    while($row = mysqli_fetch_array($result2)) {
+
+    while($row = mysqli_fetch_all($result2)) {
         echo "appointment id: " .$row['appointmentID']. "scheduled time: " .$row['datetime']. "reason for visit: " .$row['reason']. "<br>";
     }
 ?>
