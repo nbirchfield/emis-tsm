@@ -29,11 +29,12 @@
 	$question = $_POST['question'];
 	$answer = $_POST['answer'];
 
-	if(empty($firstname) || empty($lastname) || empty($email) || empty($question) || empty($username) || empty($answer)){
-	
+	if(empty($username) || empty($firstname) || empty($lastname) || empty($email) || empty($question) || empty($answer)){
 		header("Location: newaccount.php?error=empty");
 		exit();
-	}else{
+}
+else{
+
 	# prevent mysql injection
 	$username = stripcslashes($username);
 	$firstname = stripcslashes($firstname);
@@ -44,14 +45,6 @@
 
 	# connect to the server and select database
 	$con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
-
-	$sql = "SELECT username FROM PatientTableNew WHERE username='$username'";
-	$result = mysqli_query($con,$sql);
-	$uidCheck = mysqli_num_rows($result);
-	if($uidCheck > 0){
-		header("Location: newaccount.php?error=inUse");
-		exit();
-	}else{	
 
 	# create sql query and bind parameters
 	$verifystmt = mysqli_prepare($con, "select SUM(CASE WHEN Username = ? THEN 1 ELSE 0 END) from PatientTableNew");
@@ -84,7 +77,6 @@
        	} else {
 		mysqli_close($con);
 	}
-	echo "Account Name Already In Use\n";
-}
+	header("Location: newaccount.php?error=inUse");
 }
 ?>

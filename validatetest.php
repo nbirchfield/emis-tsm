@@ -59,5 +59,5 @@
 		mysqli_stmt_fetch($stmt2);
 	}
 	mysqli_close($con);
-	echo "Invalid Username/Password\n";
+	header("Location: index.php?error=incorrect");
 ?>

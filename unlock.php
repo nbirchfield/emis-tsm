@@ -37,5 +37,5 @@
 		echo mysqli_errno($con);    
 	}
 	mysqli_close($con);
-	echo "Invalid Username / Password\n";
+	header("Location: unlockaccount.php?error=incorrect");
 ?>

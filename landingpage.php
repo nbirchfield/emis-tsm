@@ -70,6 +70,7 @@ li a:hover{
   <li><a href="">Personal Info</a></li>
   <li><a href="">Pay Bills</a></li>
   <li><a href="insertrecord.php">Insert Record</a></li>
+  <li><a href="logout.php" color="red">Log Out</a></li>
 </ul>
 
 <div class="page">

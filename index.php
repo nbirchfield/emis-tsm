@@ -33,7 +33,12 @@
                         <option>patient</option>
                     </select>
                 </div>
-
+<?php
+	$url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+	if(strpos($url, 'error=incorrect') ){
+		echo "<font color='red'>Incorrect password or username!!!</font>";
+	}
+?>
 				<div class="username">
 					<input type="text" name="username" placeholder = "Username">  
 				</div>   

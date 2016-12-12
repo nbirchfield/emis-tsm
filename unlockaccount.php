@@ -7,6 +7,12 @@
     <body>
         <div class="container">
 			<h1 > Unlock Account</h1>
+<?php
+	$url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+	if(strpos($url, 'error=incorrect') ){
+		echo "<font color='red'>Incorrect password or username!!!</font>";
+	}
+?>
 			<form action="unlock.php" method="post">
 				<div class="username">
 					<input type="text" name="username" placeholder = "Username">  
