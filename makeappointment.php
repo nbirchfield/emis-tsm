@@ -27,7 +27,7 @@
     }
 
     if($results == 0) {
-        $verifystmt2 = mysqli_prepare($con, "insert  into appointment (datetime, reason, patientID) values (?, ?, ?)");
+        $verifystmt2 = mysqli_prepare($con, "insert  into appointment values (?, ?, ?)");
         mysqli_stmt_bind_param($verifystmt2, 'sss', $datetime, $reason, $_SESSION["patientID"]);
 
         if(mysqli_stmt_execute($verifystmt2)) {
