@@ -113,7 +113,7 @@ form{
     # create sql query and bind parameters
     $verifystmt = mysqli_prepare($con, "select patientID from PatientTableNew where username = ?");
     mysqli_stmt_bind_param($verifystmt, 's', $username);
-    echo "before first query";
+    echo "before first query<br>";
     # Query the database to grab patientID
     if(mysqli_stmt_execute($verifystmt)) {
         mysqli_stmt_bind_result($verifystmt, $result1);
@@ -126,13 +126,14 @@ form{
     # create sql query and bind parameters
     $verifystmt2 = mysqli_prepare($con, "select * from appointment where patientID = ?");
     mysqli_stmt_bind_param($verifystmt2, 's', $result1);
-    echo "before second query";
+    echo "before second query<br>";
     # Query the database to see i
     if(mysqli_stmt_execute($verifystmt2)) {
         mysqli_stmt_bind_result($verifystmt2, $result2);
         mysqli_stmt_fetch($verifystmt2);
         mysqli_stmt_close($verifystmt2);
     }
+    echo "".mysqli_num_rows($result2)"<br>";
     while($row = mysqli_fetch_assoc($result2)) {
         echo "appointment id: " .$row['appointmentID']. "scheduled time: " .$row['datetime']. "reason for visit: " .$row['reason']. "<br>";
     }
