@@ -135,7 +135,7 @@ form{
         mysqli_stmt_close($verifystmt2);
     }
     $num_rows = mysqli_num_rows($result2);
-    echo "$num_rows<br>";
+    echo "num rows: $num_rows<br>";
     while($row = mysqli_fetch_array($result2)) {
         echo "appointment id: " .$row['appointmentID']. "scheduled time: " .$row['datetime']. "reason for visit: " .$row['reason']. "<br>";
     }
