@@ -133,7 +133,7 @@ form{
         mysqli_stmt_fetch($verifystmt2);
         mysqli_stmt_close($verifystmt2);
     }
-    echo "".mysqli_num_rows($result2)"<br>";
+    
     while($row = mysqli_fetch_assoc($result2)) {
         echo "appointment id: " .$row['appointmentID']. "scheduled time: " .$row['datetime']. "reason for visit: " .$row['reason']. "<br>";
     }
