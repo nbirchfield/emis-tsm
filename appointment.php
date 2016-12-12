@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,13 +91,10 @@ form{
 </style>
 </head>
 <body>
-<?php
-    $username = $_GET['username'];
-?>
 <ul>
-  <li><a class="home" href="landingpage.php?username=<?php echo $username; ?>">Home</a></li>
+  <li><a class="home" href="landingpage.php">Home</a></li>
   <li><a href="">Calander</a></li>
-  <li><a href="appointment.php?username<?php echo $username; ?>">Appointments</a></li>
+  <li><a href="appointment.php">Appointments</a></li>
   <li><a href="">Medical History</a></li>
   <li><a href="">Messages</a></li>
   <li><a href="">Personal Info</a></li>
@@ -109,18 +107,21 @@ form{
 <p align = "center"> Your Upcoming Apointments:<br><br>
 <?php
 
+    $username = $_SESSION["username"];
     $con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
 
     # create sql query and bind parameters
     $verifystmt = mysqli_prepare($con, "select patientID from PatientTableNew where username = ?");
     mysqli_stmt_bind_param($verifystmt, 's', $username);
 
-    # Query the database to see i
+    # Query the database to grab patientID
     if(mysqli_stmt_execute($verifystmt)) {
         mysqli_stmt_bind_result($verifystmt, $result1);
         mysqli_stmt_fetch($verifystmt);
         mysqli_stmt_close($verifystmt);
     }
+
+    $_SESSION["patientID"] = $result1;
 
     # create sql query and bind parameters
     $verifystmt2 = mysqli_prepare($con, "select * from appointment where patientID = ?");

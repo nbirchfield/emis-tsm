@@ -1,4 +1,5 @@
 <?php
+
 	# get values passed from form in index.php file
 	$type = $_POST['type'];
 	$username = $_POST['username'];
@@ -31,16 +32,21 @@
         # if user is in database and login credentials verified
         if ($results == 1 && $attempts < 3) {
 
-            mysqli_close($con);
+        	#create a session if login successful
+        	session_start();
+            $_SESSION["username"] = $username;
+            $_SESSION["type"] = $type;
 
-            # employee destination
+			mysqli_close($con);
+
+			# employee destination
             if ($type == 'employee') {
-                header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php?username=$username");
+                header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php");
                 mysqli_free_result($results);
                 exit;
             } else {
                 # patient destination
-                header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php?username=$username");
+                header("Location: http://galadriel.cs.utsa.edu/~group4/landingpage.php?");
                 mysqli_free_result($results);
                 exit;
             }
