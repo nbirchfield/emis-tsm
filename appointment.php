@@ -133,8 +133,9 @@ form{
         mysqli_stmt_fetch($verifystmt2);
         mysqli_stmt_close($verifystmt2);
     }
-
-    echo "$result2";
+    while($row = mysqli_fetch_array($result2)) {
+        echo "appointment id: " .$row['appointmentID']. "scheduled time: " .$row['datetime']. "reason for visit: " .$row['reason']. "<br>";
+    }
 ?>
 <form action="schedulea.php" method="POST">
 	<input type="submit" name="submit" value="Make Appointment" class="btn">
