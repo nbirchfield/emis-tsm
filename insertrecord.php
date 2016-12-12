@@ -89,8 +89,9 @@ form{
 
 <div class="page">
 <h1>Records</h1>
-<form action="" method="">
-	<input type="submit" name="submit" value="Find Document" class="btn">
+<form action="upload.php" method="POST" enctype="multipart/form-data">
+	<input type="file" name="file">
+	<button type="submit" name="submit" class="btn">Upload</button>
 </form>
 
 
