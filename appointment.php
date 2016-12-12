@@ -127,14 +127,16 @@ form{
     $verifystmt2 = mysqli_prepare($con, "select * from appointment where patientID = ?");
     mysqli_stmt_bind_param($verifystmt2, 's', $result1);
     echo "before second query<br>";
+
     # Query the database to see i
     if(mysqli_stmt_execute($verifystmt2)) {
         mysqli_stmt_bind_result($verifystmt2, $result2);
         mysqli_stmt_fetch($verifystmt2);
         mysqli_stmt_close($verifystmt2);
     }
-    
-    while($row = mysqli_fetch_assoc($result2)) {
+    $num_rows = mysqli_num_rows($result2);
+    echo "$num_rows<br>";
+    while($row = mysqli_fetch_array($result2)) {
         echo "appointment id: " .$row['appointmentID']. "scheduled time: " .$row['datetime']. "reason for visit: " .$row['reason']. "<br>";
     }
 ?>
