@@ -113,7 +113,7 @@ form{
     # create sql query and bind parameters
     $verifystmt = mysqli_prepare($con, "select patientID from PatientTableNew where username = ?");
     mysqli_stmt_bind_param($verifystmt, 's', $username);
-
+    echo "before first query";
     # Query the database to grab patientID
     if(mysqli_stmt_execute($verifystmt)) {
         mysqli_stmt_bind_result($verifystmt, $result1);
@@ -126,7 +126,7 @@ form{
     # create sql query and bind parameters
     $verifystmt2 = mysqli_prepare($con, "select * from appointment where patientID = ?");
     mysqli_stmt_bind_param($verifystmt2, 's', $result1);
-
+    echo "before second query";
     # Query the database to see i
     if(mysqli_stmt_execute($verifystmt2)) {
         mysqli_stmt_bind_result($verifystmt2, $result2);
