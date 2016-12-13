@@ -138,13 +138,13 @@ form{
     }
 
     if(mysqli_num_rows($result2) > 0) {
-        echo "num rows: $numrows<br>";
+        while($row = mysqli_fetch_all($result2)) {
+            echo "appointment id: " .$row['appointmentID']. "scheduled time: " .$row['datetime']. "reason for visit: " .$row['reason']. "<br>";
+        }
     } else {
         echo "You have no upcoming appointments";
     }
-    while($row = mysqli_fetch_array($result2)) {
-        echo "appointment id: " .$row['appointmentID']. "scheduled time: " .$row['datetime']. "reason for visit: " .$row['reason']. "<br>";
-    }
+
 ?>
 <form action="schedulea.php" method="POST">
 	<input type="submit" name="submit" value="Make Appointment" class="btn">
