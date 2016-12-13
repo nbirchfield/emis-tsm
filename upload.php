@@ -1,29 +1,18 @@
 <?php
-if(isset($_POST['submit'])){
-	
-	if(getimagesize($_FILES['file']['tmp_name']) == false){
-		echo"please select image";
-		
-	}else{
-		$image = addslashes($_FILES['file']['tmp_name']);
-		$name = addslashes($_FILES['file']['name']);
-		$img = file_get_contents($image);
-		$imag = base64_encode($img);
-		saveimage($name,$imag);
-		
-	}
-}
-	function saveimage($name, $image){
-		$con = mysqli_connect("localhost","group4", "Group4@TSM", "group4");
-		mysqli_select_db("group4",$con);
-		$qry="INSERT INTO uploads (name, pic) VALUES ('$name','$image')";
-		$result = mysqli_query($qry,$con);
-		if($result){
-			echo"upload complete";
-		}else{
-			echo"upload not complete";
+if(isset($_POST['submit'])) {
 
-		}
+
+	$con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
+
+	$imageName = mysqli_real_escape_string($_FILES["image"]["name"]);
+	$imageDate = mysqli_real_escape_string(file_get_contents($_FILES["image"]["tmp_name"]));
+	$imageType = mysqli_real_escape_string($_FILES["image"]["type"]);
+
+	if(substr($imageType, 0, 5) == "image") {
+		mysqli_query($con, "insert into uploads values (null, '$imagename','$imageDate')");
+	} else {
+		echo "only images";
 	}
-	
+
+}
 ?>
