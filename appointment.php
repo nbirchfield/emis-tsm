@@ -127,7 +127,7 @@ form{
 
     # create sql query and bind parameters
     $verifystmt2 = mysqli_prepare($con, "select appointmentID, datetime from appointment limit 1");
-    #mysqli_stmt_bind_param($verifystmt2, 's', $result1);
+    mysqli_stmt_bind_param($verifystmt2, 's', $result1);
 
     echo "before second query";
     # Query the database to see i
@@ -137,14 +137,14 @@ form{
 	    mysqli_stmt_close($verifystmt2);
         #$rownum = mysqli_num_rows($result2);
 
-        #echo "appointmentID: ".$a_id ."<br>scheduled time:" .$date_time;
+        echo "appointmentID: ".$a_id ."<br>scheduled time:" .$date_time;
         /*while($row = mysqli_fetch_array($result2)) {
             echo "appointmentID = ".$row['appointmentID']."\ndate_time:".$row['datetime']"<br>";
-        */}
+        }
 
         #if(mysqli_num_rows($result2) > 0) {
 
-        /*} else {
+        } else {
             echo "You have no upcoming appointments";
         }*/
         #mysqli_stmt_fetch($verifystmt2);
@@ -152,9 +152,6 @@ form{
     } else {
         echo "sql error: " .mysqli_errno($con);
     }
-
-
-
 ?>
 <form action="schedulea.php" method="POST">
 	<input type="submit" name="submit" value="Make Appointment" class="btn">
