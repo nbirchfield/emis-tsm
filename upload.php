@@ -10,11 +10,11 @@ if(isset($_POST['submit'])) {
 
 	#if(substr($imageType, 0, 5) == "image") {
 		echo $imageData;
-		if(mysqli_query($con, "insert into uploads values (null,$imageName,$imageData)")) {
+		/*if(mysqli_query($con, "insert into uploads values (null ,$imageName,$imageData)")) {
 			echo "works";
 		} else {
 			echo "failed: ". mysqli_errno($con);
-		}
+		}*/
 	/*} else {
 		echo "images only";
     }*/
