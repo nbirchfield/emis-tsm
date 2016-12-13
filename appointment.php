@@ -131,7 +131,7 @@ form{
     # Query the database to see i
     if(mysqli_stmt_execute($verifystmt2)) {
         mysqli_stmt_bind_result($verifystmt2, $result2);
-        if(mysqli_num_rows($result2) > 0) {
+        if(mysqli_stmt_num_rows($verifystmt2) > 0) {
             while($row = mysqli_stmt_fetch($verifystmt2)) {
                 echo "appointment id: " .$row['appointmentID']. "scheduled time: " .$row['datetime']. "reason for visit: " .$row['reason']. "<br>";
             }
