@@ -131,19 +131,20 @@ form{
     # Query the database to see i
     if(mysqli_stmt_execute($verifystmt2)) {
         mysqli_stmt_bind_result($verifystmt2, $result2);
-        mysqli_stmt_fetch($verifystmt2);
-        mysqli_stmt_close($verifystmt2);
+        if(mysqli_num_rows($result2) > 0) {
+            while($row = mysqli_stmt_fetch($verifystmt2)) {
+                echo "appointment id: " .$row['appointmentID']. "scheduled time: " .$row['datetime']. "reason for visit: " .$row['reason']. "<br>";
+            }
+        } else {
+            echo "You have no upcoming appointments";
+        }
+        #mysqli_stmt_fetch($verifystmt2);
+        #mysqli_stmt_close($verifystmt2);
     } else {
         echo "sql error: " .mysqli_errno($con);
     }
 
-    if(mysqli_num_rows($result2) > 0) {
-        while($row = mysqli_fetch_all($result2)) {
-            echo "appointment id: " .$row['appointmentID']. "scheduled time: " .$row['datetime']. "reason for visit: " .$row['reason']. "<br>";
-        }
-    } else {
-        echo "You have no upcoming appointments";
-    }
+
 
 ?>
 <form action="schedulea.php" method="POST">
