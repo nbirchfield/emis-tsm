@@ -58,7 +58,7 @@
         #if user is in database, add user with provided info
         if($results == 0) {
             mysqli_free_result($verifystmt);
-            $addstmt = mysqli_prepare($con, "INSERT INTO PatientTableNew VALUES(?,?,?,'Temppass9',?, 0, ?, ?)");
+            $addstmt = mysqli_prepare($con, "INSERT INTO PatientTableNew VALUES(null,?,?,?,'Temppass9',?, 0, ?, ?)");
             mysqli_stmt_bind_param($addstmt, 'ssssss', $firstname, $lastname, $username, $email, $question, $answer);
 
             if (mysqli_stmt_execute($addstmt)) {
