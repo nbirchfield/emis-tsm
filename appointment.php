@@ -121,23 +121,20 @@ form{
         mysqli_stmt_fetch($verifystmt);
         mysqli_stmt_close($verifystmt);
     }
-    #echo "patientid: ". $_SESSION["patientID"]"<br>";
 
     $_SESSION["patientID"] = $result1;
 
     # create sql query and bind parameters
-    $verifystmt2 = mysqli_prepare($con, "select appointmentID, datetime from appointment limit 1");
+    $verifystmt2 = mysqli_prepare($con, "select appointmentID, datetime from appointment limit 3");
     mysqli_stmt_bind_param($verifystmt2, 's', $result1);
 
-    echo "before second query";
     # Query the database to see i
     if(mysqli_stmt_execute($verifystmt2)) {
         mysqli_stmt_bind_result($verifystmt2, $a_id, $date_time);
 	    mysqli_stmt_fetch($verifystmt2);
 	    mysqli_stmt_close($verifystmt2);
-        #$rownum = mysqli_num_rows($result2);
-
-        echo "appointmentID: ".$a_id ."<br>scheduled time:" .$date_time;
+        
+        echo "appointmentID: ".$a_id ."\n\nscheduled time:" .$date_time;
         /*while($row = mysqli_fetch_array($result2)) {
             echo "appointmentID = ".$row['appointmentID']."\ndate_time:".$row['datetime']"<br>";
         }
