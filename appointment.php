@@ -122,7 +122,7 @@ form{
     }
 
     $_SESSION["patientID"] = $result1;
-    echo "$result1";
+    echo "$result1<br>";
     # create sql query and bind parameters
     $verifystmt2 = mysqli_prepare($con, "select * from appointment where patientID = ?");
     mysqli_stmt_bind_param($verifystmt2, 's', $result1);
