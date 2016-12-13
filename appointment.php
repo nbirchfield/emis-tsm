@@ -106,6 +106,7 @@ form{
 <h1>Appointments</h1> 
 <p align = "center"> Your Upcoming Apointments:<br><br>
 <?php
+    session_start();
 
     $username = $_SESSION["username"];
     $con = mysqli_connect("localhost", "group4", "Group4@TSM", "group4");
