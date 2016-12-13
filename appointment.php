@@ -121,6 +121,7 @@ form{
         mysqli_stmt_fetch($verifystmt);
         mysqli_stmt_close($verifystmt);
     }
+    echo "patientid: ". $_SESSION["patientID"]"<br>";
 
     $_SESSION["patientID"] = $result1;
 
