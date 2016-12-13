@@ -113,7 +113,7 @@ form{
     # create sql query and bind parameters
     $verifystmt = mysqli_prepare($con, "select patientID from PatientTableNew where username = ?");
     mysqli_stmt_bind_param($verifystmt, 's', $username);
-    echo "before first query<br>";
+    echo "user: $username before first query<br>";
     # Query the database to grab patientID
     if(mysqli_stmt_execute($verifystmt)) {
         mysqli_stmt_bind_result($verifystmt, $result1);
@@ -122,7 +122,7 @@ form{
     }
 
     $_SESSION["patientID"] = $result1;
-    echo "$result1<br>";
+    echo "result1: $result1<br>";
     # create sql query and bind parameters
     $verifystmt2 = mysqli_prepare($con, "select * from appointment where patientID = ?");
     mysqli_stmt_bind_param($verifystmt2, 's', $result1);
