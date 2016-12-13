@@ -130,7 +130,7 @@ form{
 
     # Query the database to see i
     if(mysqli_stmt_execute($verifystmt2)) {
-        mysqli_stmt_bind_result($verifystmt2, $a_id, $date_time);
+        mysqli_stmt_bind_result($verifystmt2, $date_time);
 	    mysqli_stmt_fetch($verfiystmt2);
         #$rownum = mysqli_num_rows($result2);
 	    echo "appointmentID = <br>date_time:$date_time";
