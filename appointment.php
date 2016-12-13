@@ -137,7 +137,7 @@ form{
 	    mysqli_stmt_close($verifystmt2);
         #$rownum = mysqli_num_rows($result2);
 
-        echo "appointmentID: $a_id <br>scheduled time: $date_time";
+        echo "appointmentID: ".$a_id ."<br>scheduled time:" .$date_time;
         /*while($row = mysqli_fetch_array($result2)) {
             echo "appointmentID = ".$row['appointmentID']."\ndate_time:".$row['datetime']"<br>";
         */}
