@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $date = $_POST['date'];
@@ -7,8 +7,6 @@
     $doctor = $_POST['doctor'];
     $reason = $_POST['reason'];
     $datetime = $date . " " . $time;
-
-    #echo "$firstname\n$lastname\n$datetime\n$doctor";
 
     $firstname = stripcslashes($firstname);
     $lastname = stripcslashes($lastname);
@@ -27,7 +25,7 @@
     }
 
     if($results == 0) {
-        $verifystmt2 = mysqli_prepare($con, "insert  into appointment (datetime, reason, patientID) values (null, ?, ?, ?)");
+        $verifystmt2 = mysqli_prepare($con, "insert into appointment values (null, ?, ?, ?)");
         mysqli_stmt_bind_param($verifystmt2, 'sss', $datetime, $reason, $_SESSION["patientID"]);
 
         if(mysqli_stmt_execute($verifystmt2)) {
