@@ -126,7 +126,7 @@ form{
     $_SESSION["patientID"] = $result1;
 
     # create sql query and bind parameters
-    $verifystmt2 = mysqli_prepare($con, "select appointmentID, datetime from appointment where patientID = ? limit 3");
+    $verifystmt2 = mysqli_prepare($con, "select appointmentID, datetime from appointment where patientID = ? limit 1");
     mysqli_stmt_bind_param($verifystmt2, 's', $result1);
 
     echo "before second query";
