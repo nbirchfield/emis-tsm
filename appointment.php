@@ -136,11 +136,11 @@ form{
     } else {
         echo "sql error: " .mysqli_errno($con);
     }
-    
+
     if(mysqli_num_rows($result2) > 0) {
         echo "num rows: $numrows<br>";
     } else {
-        echo "0 results";
+        echo "You have no upcoming appointments";
     }
     while($row = mysqli_fetch_array($result2)) {
         echo "appointment id: " .$row['appointmentID']. "scheduled time: " .$row['datetime']. "reason for visit: " .$row['reason']. "<br>";
