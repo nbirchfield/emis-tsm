@@ -8,11 +8,9 @@ if(isset($_POST['submit'])) {
 	$imageDate = mysqli_real_escape_string(file_get_contents($_FILES["image"]["tmp_name"]));
 	$imageType = mysqli_real_escape_string($_FILES["image"]["type"]);
 
-	if(substr($imageType, 0, 5) == "image") {
+	#if(substr($imageType, 0, 5) == "image") {
 		mysqli_query($con, "insert into uploads values (null,$imageName,$imageDate)");
-	} else {
-		echo "only images";
-	}
+	#} else {
 
 }
 ?>
