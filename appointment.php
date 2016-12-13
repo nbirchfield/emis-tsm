@@ -129,6 +129,7 @@ form{
     $verifystmt2 = mysqli_prepare($con, "select datetime from appointment limit 1");
     #mysqli_stmt_bind_param($verifystmt2, 's', $result1);
 
+    echo "before second query";
     # Query the database to see i
     if(mysqli_stmt_execute($verifystmt2)) {
         mysqli_stmt_bind_result($verifystmt2, $date_time);
