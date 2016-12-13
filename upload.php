@@ -7,17 +7,17 @@ if(isset($_POST['submit'])){
 	}else{
 		$image = addslashes($_FILES['file']['tmp_name']);
 		$name = addslashes($_FILES['file']['name']);
-		$image = file_get_contents($image);
-		$image = base64_encode($image);
-		saveimage($name,$image);
+		$img = file_get_contents($image);
+		$imag = base64_encode($img);
+		saveimage($name,$imag);
 		
 	}
 }
 	function saveimage($name, $image){
-		$con = mysql_connect("localhost","group4", "Group4@TSM", "group4");
-		mysql_select_db("group4",$con);
+		$con = mysqli_connect("localhost","group4", "Group4@TSM", "group4");
+		mysqli_select_db("group4",$con);
 		$qry="INSERT INTO uploads (name, pic) VALUES ('$name','$image')";
-		$result = mysql_query($qry,$con);
+		$result = mysqli_query($qry,$con);
 		if($result){
 			echo"upload complete";
 		}else{
