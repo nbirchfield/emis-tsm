@@ -9,8 +9,11 @@ if(isset($_POST['submit'])) {
 	$imageType = mysqli_real_escape_string($_FILES["image"]["type"]);
 
 	#if(substr($imageType, 0, 5) == "image") {
+		echo "image type is : $imageType";
 		mysqli_query($con, "insert into uploads values (null,$imageName,$imageDate)");
-	#} else {
+	/*} else {
+		echo "images only";
+    }*/
 
 }
 ?>
