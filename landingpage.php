@@ -62,14 +62,14 @@ li a:hover{
 <ul>
     <li><a class="home" href="landingpage.php">Home</a></li>
     <li><a href="">Calander</a></li>
-    <li><a href="appointment.php">Appointments</a></li>
+    <li><a href="appointment.php">Appointment</a></li>
     <li><a href="">Medical History</a></li>
     <li><a href="">Messages</a></li>
     <li><a href="">Personal Info</a></li>
     <li><a href="">Pay Bills</a></li>
     <li><a href="insertrecord.php">Insert Record</a></li>
     <li><a href="listfiles2.php">Download Records</a></li>
-    <li><a href="logout.php" color="red">Log Out</a></li>
+    <li><a href="logout.php">Log Out</a></li>
 </ul>
 
 <div class="page">

@@ -86,13 +86,14 @@ form{
   <li><a href="">Pay Bills</a></li>
   <li><a href="insertrecord.php">Insert Record</a></li>
   <li><a href="listfiles2.php">Download Records</a></li>
+  <li><a href="logout.php">Log Out</a></li>
 </ul>
 
 <div class="page">
 <h1>Records</h1>
 <form action="add_file2.php" method="POST" enctype="multipart/form-data">
 	<input type="file" name="uploaded_file"><br>
-	<input type="submit" value="Upload file">
+	<input type="submit" value="Upload file" class="btn">
 </form>
 
 </div>
