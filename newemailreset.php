@@ -46,7 +46,7 @@
 	# if the email is in the database, send an email to the recipient with reset link
 	if($results == 1) {
 		mysqli_free_result($verifystmt);
-		
+		echo "before send";
 		# send email or return error
 		if(!$mail->Send()) {
 			mysqli_close($con);
