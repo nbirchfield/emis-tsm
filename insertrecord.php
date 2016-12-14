@@ -85,12 +85,14 @@ form{
   <li><a href="">Personal Info</a></li>
   <li><a href="">Pay Bills</a></li>
   <li><a href="insertrecord.php">Insert Record</a></li>
+  <li><a href="listfiles.php">Download Records</a></li>
 </ul>
 
 <div class="page">
 <h1>Records</h1>
-<form action="upload.php" method="POST" enctype="multipart/form-data">
-	<input type="file" name="image"><input type="submit" name="submit" value="Upload">
+<form action="add_file.php" method="POST" enctype="multipart/form-data">
+	<input type="file" name="uploaded_file"><br>
+	<input type="submit" value="Upload file">
 </form>
 
 </div>
