@@ -128,25 +128,15 @@ form{
     $verifystmt2 = mysqli_prepare($con, "select appointmentID, datetime from appointment limit 3");
     mysqli_stmt_bind_param($verifystmt2, 's', $result1);
 
-    # Query the database to see i
+    # Query the database
     if(mysqli_stmt_execute($verifystmt2)) {
         mysqli_stmt_bind_result($verifystmt2, $a_id, $date_time);
 	    mysqli_stmt_fetch($verifystmt2);
 	    mysqli_stmt_close($verifystmt2);
 
+        for ($i = 0; $i < 3; $i++)
+            echo "appointmentID: ".$a_id[$i] ."\n\nscheduled time:" .$date_time[$i];
 
-        echo "appointmentID: ".$a_id ."\n\nscheduled time:" .$date_time;
-        /*while($row = mysqli_fetch_array($result2)) {
-            echo "appointmentID = ".$row['appointmentID']."\ndate_time:".$row['datetime']"<br>";
-        }
-
-        #if(mysqli_num_rows($result2) > 0) {
-
-        } else {
-            echo "You have no upcoming appointments";
-        }*/
-        #mysqli_stmt_fetch($verifystmt2);
-        #mysqli_stmt_close($verifystmt2);
     } else {
         echo "sql error: " .mysqli_errno($con);
     }
