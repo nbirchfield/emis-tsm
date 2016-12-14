@@ -85,7 +85,7 @@ form{
   <li><a href="">Personal Info</a></li>
   <li><a href="">Pay Bills</a></li>
   <li><a href="insertrecord.php">Insert Record</a></li>
-  <li><a href="listfiles.php">Download Records</a></li>
+  <li><a href="listfiles2.php">Download Records</a></li>
 </ul>
 
 <div class="page">
