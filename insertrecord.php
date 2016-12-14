@@ -90,7 +90,7 @@ form{
 
 <div class="page">
 <h1>Records</h1>
-<form action="add_file.php" method="POST" enctype="multipart/form-data">
+<form action="add_file2.php" method="POST" enctype="multipart/form-data">
 	<input type="file" name="uploaded_file"><br>
 	<input type="submit" value="Upload file">
 </form>
