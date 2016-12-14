@@ -131,12 +131,9 @@ form{
     # Query the database
     if(mysqli_stmt_execute($verifystmt2)) {
         mysqli_stmt_bind_result($verifystmt2, $a_id, $date_time);
-	    mysqli_stmt_fetch($verifystmt2);
-	    mysqli_stmt_close($verifystmt2);
-
-        for ($i = 0; $i < 3; $i++)
-            echo "appointmentID: ".$a_id[$i] ."\n\nscheduled time:" .$date_time[$i];
-
+        while(mysqli_stmt_fetch($verifystmt2))
+            echo "appointmentID: ".$a_id ."\n\nscheduled time:" .$date_time"<br>";
+        mysqli_stmt_close($verifystmt2);
     } else {
         echo "sql error: " .mysqli_errno($con);
     }
