@@ -128,12 +128,9 @@ form{
     $verifystmt2 = mysqli_prepare($con, "select appointmentID, datetime from appointment limit 3");
     mysqli_stmt_bind_param($verifystmt2, 's', $result1);
 
-    # Query the database
+    # Query the database and print out 3 upcoming appointments
     if(mysqli_stmt_execute($verifystmt2)) {
         mysqli_stmt_bind_result($verifystmt2, $a_id, $date_time);
-	    #mysqli_stmt_fetch($verifystmt2);
-	    #mysqli_stmt_close($verifystmt2);
-
         while(mysqli_stmt_fetch($verifystmt2)) {
             echo "appointmentID: " . $a_id . "\n\nscheduled time:" . $date_time . "<br>";
         }
