@@ -43,6 +43,7 @@
 		mysqli_stmt_fetch($verifystmt);
 		mysqli_stmt_close($verifystmt);
 	}
+	echo "$email";
 	# if the email is in the database, send an email to the recipient with reset link
 	if($results == 1) {
 		mysqli_free_result($verifystmt);
@@ -57,6 +58,6 @@
 			exit;
 		}  
 	} else {
-		echo mysqli_errno($con);
+		echo "sql error: " . mysqli_errno($con);
 	}
 ?>
