@@ -123,7 +123,7 @@ if($result) {
         echo '<table width="100%">
                 <tr>
                     <td><b>Name</b></td>
-                    <td><b>Mime</b></td>
+                    <td><b>File Type</b></td>
                     <td><b>Size (bytes)</b></td>
                     <td><b>Created</b></td>
 		    <td><b>Username</b></td>
